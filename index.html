@@ -5,77 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Azizov Akbar</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d0d0d;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #070707, #171717);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
 
     .card {
+      width: 100%;
       max-width: 430px;
-      margin: auto;
-      background: #1a1a1a;
-      border-radius: 24px;
-      padding: 28px 20px;
-      box-shadow: 0 0 25px rgba(212,175,55,0.25);
-      border: 1px solid #d4af37;
+      background: rgba(20, 20, 20, 0.95);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 28px;
+      padding: 32px 24px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.7);
+      text-align: center;
     }
 
-    .avatar {
-      width: 95px;
-      height: 95px;
+    .logo {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 18px;
       border-radius: 50%;
-      background: #d4af37;
+      background: linear-gradient(135deg, #d4af37, #fff2a8);
       color: #111;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 34px;
-      font-weight: bold;
-      margin: 0 auto 15px;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
     h1 {
-      margin: 10px 0 5px;
-      color: #d4af37;
-      font-size: 26px;
+      margin: 0;
+      font-size: 28px;
+      color: #f5d76e;
     }
 
-    p {
-      color: #ccc;
-      margin-bottom: 25px;
+    .subtitle {
+      margin: 8px 0 26px;
+      color: #bdbdbd;
+      font-size: 15px;
     }
 
-    a, button {
-      display: block;
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
       width: 100%;
-      box-sizing: border-box;
+      padding: 15px 17px;
       margin: 12px 0;
-      padding: 15px;
-      border-radius: 14px;
-      background: #d4af37;
-      color: #000;
+      border-radius: 16px;
+      background: #222;
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      border: none;
       font-size: 16px;
-      cursor: pointer;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.25s;
     }
 
-    .number {
-      background: #2a2a2a;
-      color: #fff;
-      border: 1px solid #444;
+    .btn i {
+      width: 24px;
+      color: #f5d76e;
+      font-size: 20px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #2b2b2b;
+      border-color: #d4af37;
+    }
+
+    .gold {
+      background: linear-gradient(135deg, #d4af37, #fff2a8);
+      color: #111;
+    }
+
+    .gold i {
+      color: #111;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      text-align: left;
     }
 
     .footer {
-      margin-top: 22px;
+      margin-top: 24px;
       font-size: 13px;
       color: #777;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
@@ -83,28 +118,43 @@
 <body>
 
   <div class="card">
-    <div class="avatar">AA</div>
+    <div class="logo">AA</div>
 
     <h1>Azizov Akbar</h1>
-    <p>Raqamli vizitka</p>
+    <div class="subtitle">Digital Business Card</div>
 
-    <a href="tel:+998906100636">📞 Qo‘ng‘iroq qilish</a>
+    <a class="btn gold" href="tel:+998906100636">
+      <i class="fa-solid fa-phone"></i>
+      Qo‘ng‘iroq qilish
+    </a>
 
-    <a href="https://t.me/Akkbar611" target="_blank">💬 Telegram</a>
+    <a class="btn" href="https://t.me/Akkbar611" target="_blank">
+      <i class="fa-brands fa-telegram"></i>
+      Telegram
+    </a>
 
-    <a href="https://instagram.com/111_.cosmos" target="_blank">📷 Instagram</a>
+    <a class="btn" href="https://instagram.com/111_.cosmos" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+      Instagram
+    </a>
 
-    <button class="number" onclick="copyCard()">💳 Karta raqamini nusxalash</button>
+    <button class="btn" onclick="copyCard()">
+      <i class="fa-solid fa-credit-card"></i>
+      Karta raqamini nusxalash
+    </button>
 
-    <div class="footer">
-      NFC Digital Business Card
-    </div>
+    <a class="btn" href="azizov-akbar.vcf" download>
+      <i class="fa-solid fa-address-card"></i>
+      Kontaktni saqlash
+    </a>
+
+    <div class="footer">NFC Premium Business Card</div>
   </div>
 
   <script>
     function copyCard() {
       navigator.clipboard.writeText("5440810309065703");
-      alert("Karta raqami nusxalandi!");
+      alert("Karta raqami nusxalandi");
     }
   </script>
 
