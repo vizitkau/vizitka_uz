@@ -1,318 +1,266 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azizov Akbar | NFC Business Card</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azizov Akbar | NFC Card</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Inter,"Segoe UI",Arial,sans-serif;
+  background:radial-gradient(circle at top,#1b1b1b,#040404 65%);
+  color:white;
+  padding:28px;
+}
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+.hero,.panel{
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:34px;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(18px);
+  box-shadow:0 30px 90px rgba(0,0,0,.65);
+}
+.hero{
+  min-height:640px;
+  padding:34px;
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.25),#050505 70%),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80") center/cover;
+}
+.badge{
+  position:absolute;right:28px;top:28px;
+  padding:10px 18px;
+  border-radius:30px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(212,175,55,.55);
+  color:#f3d36b;
+  font-weight:700;
+}
+.logo{
+  margin-top:135px;
+  width:96px;height:96px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#d4af37,#fff0a3);
+  color:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:44px;
+  font-weight:900;
+}
+h1{
+  font-size:58px;
+  line-height:.95;
+  margin:42px 0 12px;
+}
+h1 span{color:#d4af37}
+.desc{
+  color:#d7d7d7;
+  font-size:18px;
+  line-height:1.6;
+}
+.features{
+  display:flex;
+  gap:22px;
+  margin:34px 0;
+  color:#cfcfcf;
+  flex-wrap:wrap;
+}
+.features i{color:#d4af37}
+.phonebox{
+  margin-top:30px;
+  padding:18px;
+  border-radius:22px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+.phonebox i{
+  width:56px;height:56px;
+  border-radius:16px;
+  background:rgba(212,175,55,.15);
+  color:#d4af37;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+}
+.panel{
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.btn{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:18px;
+  margin:10px 0;
+  border-radius:22px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.11);
+  color:white;
+  text-decoration:none;
+  transition:.25s;
+  font-weight:700;
+}
+.btn:hover{
+  transform:translateY(-3px);
+  border-color:#d4af37;
+  background:rgba(255,255,255,.13);
+}
+.icon{
+  width:58px;height:58px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  background:rgba(212,175,55,.16);
+  color:#f3d36b;
+}
+.btn small{
+  display:block;
+  color:#aaa;
+  margin-top:5px;
+  font-weight:400;
+}
+.arrow{margin-left:auto;color:#999}
+.gold{
+  background:linear-gradient(135deg,rgba(212,175,55,.35),rgba(255,255,255,.08));
+}
+.brand{
+  margin-top:28px;
+  text-align:center;
+  color:#aaa;
+  font-size:13px;
+}
+.brand a{
+  display:inline-block;
+  margin-top:10px;
+  color:white;
+  font-size:24px;
+  font-weight:900;
+  text-decoration:none;
+}
+.brand i{color:#d4af37}
+button{font-family:inherit;cursor:pointer;text-align:left;width:100%}
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.25), transparent 32%),
-        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.10), transparent 28%),
-        linear-gradient(135deg, #030303, #111, #050505);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .wrapper {
-      width: 100%;
-      max-width: 980px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .profile,
-    .actions {
-      border-radius: 34px;
-      background: rgba(255, 255, 255, 0.075);
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
-      padding: 34px;
-    }
-
-    .profile {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 520px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: rgba(212, 175, 55, 0.13);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      color: #f6dc82;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .avatar {
-      width: 118px;
-      height: 118px;
-      margin-top: 34px;
-      border-radius: 32px;
-      background: linear-gradient(135deg, #d4af37, #fff3ad);
-      color: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 42px;
-      font-weight: 900;
-      box-shadow: 0 0 45px rgba(212, 175, 55, 0.38);
-    }
-
-    h1 {
-      margin: 28px 0 8px;
-      font-size: 42px;
-      line-height: 1.05;
-      letter-spacing: -1px;
-    }
-
-    .subtitle {
-      color: #c9c9c9;
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 360px;
-    }
-
-    .number {
-      margin-top: 28px;
-      padding: 16px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.06);
-      color: #ddd;
-      font-size: 15px;
-      border: 1px solid rgba(255,255,255,0.09);
-    }
-
-    .actions {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .section-title {
-      margin: 0 0 18px;
-      font-size: 22px;
-      color: #f5d76e;
-    }
-
-    .btn {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 17px 18px;
-      margin: 11px 0;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 650;
-      transition: 0.25s ease;
-      font-family: inherit;
-    }
-
-    .btn i {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f4d46b;
-      font-size: 20px;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      border-color: rgba(212,175,55,0.7);
-      background: rgba(255,255,255,0.14);
-    }
-
-    .main {
-      background: linear-gradient(135deg, #d4af37, #fff1a6);
-      color: #111;
-      border: none;
-    }
-
-    .main i {
-      color: #111;
-    }
-
-    button {
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .brand {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 12px;
-      color: #9f9f9f;
-    }
-
-    .brand a {
-      color: #f5d76e;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    @media (max-width: 760px) {
-      body {
-        padding: 18px;
-        align-items: flex-start;
-      }
-
-      .wrapper {
-        grid-template-columns: 1fr;
-        max-width: 430px;
-      }
-
-      .profile,
-      .actions {
-        padding: 26px 20px;
-        border-radius: 28px;
-      }
-
-      .profile {
-        min-height: auto;
-      }
-
-      .avatar {
-        width: 96px;
-        height: 96px;
-        border-radius: 26px;
-        font-size: 34px;
-        margin-top: 26px;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-
-      .subtitle {
-        font-size: 15px;
-      }
-
-      .btn {
-        padding: 15px 16px;
-        border-radius: 17px;
-      }
-    }
-  </style>
+@media(max-width:820px){
+  body{padding:16px}
+  .wrap{grid-template-columns:1fr;max-width:440px}
+  .hero{min-height:560px;padding:26px}
+  .logo{margin-top:110px;width:82px;height:82px;font-size:36px}
+  h1{font-size:44px}
+  .panel{padding:22px}
+  .btn{padding:15px;border-radius:18px}
+  .icon{width:50px;height:50px}
+}
+</style>
 </head>
 
 <body>
+<main class="wrap">
 
-  <main class="wrapper">
+<section class="hero">
+  <div class="badge"><i class="fa-solid fa-wifi"></i> NFC CARD</div>
+  <div class="logo">AA</div>
 
-    <section class="profile">
-      <div>
-        <div class="badge">
-          <i class="fa-solid fa-nfc-symbol"></i>
-          NFC Digital Card
-        </div>
+  <h1>Azizov<br><span>Akbar</span></h1>
+  <div class="desc">Digital Business Card<br>Zamonaviy raqamli vizitka. Kontaktlaringiz bitta joyda.</div>
 
-        <div class="avatar">AA</div>
+  <div class="features">
+    <div><i class="fa-solid fa-shield-halved"></i> Ishonchlilik</div>
+    <div><i class="fa-solid fa-bolt"></i> Tezkorlik</div>
+    <div><i class="fa-solid fa-lock"></i> Xavfsizlik</div>
+  </div>
 
-        <h1>Azizov<br>Akbar</h1>
+  <div class="phonebox">
+    <i class="fa-solid fa-phone"></i>
+    <div>
+      <b>+998 90 610 06 36</b><br>
+      <span style="color:#aaa">Telefon raqamingiz</span>
+    </div>
+  </div>
+</section>
 
-        <div class="subtitle">
-          Zamonaviy raqamli vizitka. Kontakt, ijtimoiy tarmoqlar va karta ma’lumotlari bitta sahifada.
-        </div>
+<section class="panel">
 
-        <div class="number">
-          <i class="fa-solid fa-phone"></i>
-          +998 90 610 06 36
-        </div>
-      </div>
-    </section>
+  <a class="btn gold" href="tel:+998906100636">
+    <div class="icon"><i class="fa-solid fa-phone"></i></div>
+    <div>Qo‘ng‘iroq qilish<small>Bir marta bosish bilan</small></div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+  </a>
 
-    <section class="actions">
-      <h2 class="section-title">Kontaktlar</h2>
+  <a class="btn" href="https://t.me/Akkbar611" target="_blank">
+    <div class="icon"><i class="fa-brands fa-telegram"></i></div>
+    <div>Telegram<small>Menga yozing</small></div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+  </a>
 
-      <a class="btn main" href="tel:+998906100636">
-        <i class="fa-solid fa-phone"></i>
-        Qo‘ng‘iroq qilish
-      </a>
+  <a class="btn" href="https://instagram.com/111_.cosmos" target="_blank">
+    <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+    <div>Instagram<small>Profilimni ko‘rish</small></div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+  </a>
 
-      <a class="btn" href="https://wa.me/998906100636" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
-      </a>
+  <button class="btn" onclick="copyCard()">
+    <div class="icon"><i class="fa-solid fa-credit-card"></i></div>
+    <div>Karta raqamini nusxalash<small>Bir klikda nusxalash</small></div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+  </button>
 
-      <a class="btn" href="https://t.me/Akkbar611" target="_blank">
-        <i class="fa-brands fa-telegram"></i>
-        Telegram
-      </a>
+  <button class="btn" onclick="saveContact()">
+    <div class="icon"><i class="fa-solid fa-user-plus"></i></div>
+    <div>Kontaktni saqlash<small>Telefoningizga saqlang</small></div>
+    <i class="fa-solid fa-chevron-right arrow"></i>
+  </button>
 
-      <a class="btn" href="https://instagram.com/111_.cosmos" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-        Instagram
-      </a>
+  <div class="brand">
+    Made by<br>
+    <a href="https://instagram.com/vizitka_uz" target="_blank">
+      <i class="fa-brands fa-instagram"></i> @vizitka_uz
+    </a>
+  </div>
 
-      <button class="btn" onclick="copyCard()">
-        <i class="fa-solid fa-credit-card"></i>
-        Karta raqamini nusxalash
-      </button>
+</section>
 
-      <button class="btn" onclick="saveContact()">
-        <i class="fa-solid fa-address-book"></i>
-        Kontaktni saqlash
-      </button>
+</main>
 
-      <div class="brand">
-        Made by <a href="https://instagram.com/vizitka_uz" target="_blank">@vizitka_uz</a>
-      </div>
-    </section>
-
-  </main>
-
-  <script>
-    function copyCard() {
-      navigator.clipboard.writeText("5440810309065703");
-      alert("Karta raqami nusxalandi");
-    }
-
-    function saveContact() {
-      const vcard = `BEGIN:VCARD
+<script>
+function copyCard(){
+  navigator.clipboard.writeText("5440810309065703");
+  alert("Karta raqami nusxalandi");
+}
+function saveContact(){
+  const vcard=`BEGIN:VCARD
 VERSION:3.0
 FN:Azizov Akbar
 TEL:+998906100636
 URL:https://instagram.com/111_.cosmos
 END:VCARD`;
-
-      const blob = new Blob([vcard], { type: "text/vcard" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "Azizov_Akbar.vcf";
-      link.click();
-    }
-  </script>
+  const blob=new Blob([vcard],{type:"text/vcard"});
+  const link=document.createElement("a");
+  link.href=URL.createObjectURL(blob);
+  link.download="Azizov_Akbar.vcf";
+  link.click();
+}
+</script>
 
 </body>
 </html>
