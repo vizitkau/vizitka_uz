@@ -9,18 +9,14 @@
 <style>
 *{box-sizing:border-box}
 body{
-  margin:0;
-  min-height:100vh;
+  margin:0; min-height:100vh;
   font-family:Inter,"Segoe UI",Arial,sans-serif;
   background:radial-gradient(circle at top,#1b1b1b,#040404 65%);
-  color:white;
-  padding:28px;
+  color:white; padding:28px;
 }
 .wrap{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  max-width:1100px; margin:auto;
+  display:grid; grid-template-columns:1fr 1fr;
   gap:28px;
 }
 .hero,.panel{
@@ -31,93 +27,51 @@ body{
   box-shadow:0 30px 90px rgba(0,0,0,.65);
 }
 .hero{
-  min-height:640px;
-  padding:34px;
-  position:relative;
-  overflow:hidden;
+  min-height:640px; padding:34px; position:relative; overflow:hidden;
   background:
     linear-gradient(to bottom,rgba(0,0,0,.25),#050505 70%),
     url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80") center/cover;
 }
 .badge{
   position:absolute;right:28px;top:28px;
-  padding:10px 18px;
-  border-radius:30px;
+  padding:10px 18px;border-radius:30px;
   background:rgba(0,0,0,.55);
   border:1px solid rgba(212,175,55,.55);
-  color:#f3d36b;
-  font-weight:700;
+  color:#f3d36b;font-weight:700;
 }
 .logo{
-  margin-top:135px;
-  width:96px;height:96px;
-  border-radius:26px;
+  margin-top:135px;width:96px;height:96px;border-radius:26px;
   background:linear-gradient(135deg,#d4af37,#fff0a3);
-  color:#111;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:44px;
-  font-weight:900;
+  color:#111;display:flex;align-items:center;justify-content:center;
+  font-size:44px;font-weight:900;
 }
-h1{
-  font-size:58px;
-  line-height:.95;
-  margin:42px 0 12px;
-}
+h1{font-size:58px;line-height:.95;margin:42px 0 12px}
 h1 span{color:#d4af37}
-.desc{
-  color:#d7d7d7;
-  font-size:18px;
-  line-height:1.6;
-}
+.desc{color:#d7d7d7;font-size:18px;line-height:1.6}
 .features{
-  display:flex;
-  gap:22px;
-  margin:34px 0;
-  color:#cfcfcf;
-  flex-wrap:wrap;
+  display:flex;gap:22px;margin:34px 0;color:#cfcfcf;flex-wrap:wrap;
 }
 .features i{color:#d4af37}
 .phonebox{
-  margin-top:30px;
-  padding:18px;
-  border-radius:22px;
+  margin-top:30px;padding:18px;border-radius:22px;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.12);
-  display:flex;
-  gap:16px;
-  align-items:center;
+  display:flex;gap:16px;align-items:center;
 }
 .phonebox i{
-  width:56px;height:56px;
-  border-radius:16px;
-  background:rgba(212,175,55,.15);
-  color:#d4af37;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
+  width:56px;height:56px;border-radius:16px;
+  background:rgba(212,175,55,.15);color:#d4af37;
+  display:flex;align-items:center;justify-content:center;font-size:24px;
 }
 .panel{
-  padding:34px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  padding:34px;display:flex;flex-direction:column;justify-content:center;
 }
 .btn{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  padding:18px;
-  margin:10px 0;
-  border-radius:22px;
+  display:flex;align-items:center;gap:18px;
+  padding:18px;margin:10px 0;border-radius:22px;
   background:rgba(255,255,255,.075);
   border:1px solid rgba(255,255,255,.11);
-  color:white;
-  text-decoration:none;
-  transition:.25s;
-  font-weight:700;
+  color:white;text-decoration:none;transition:.25s;font-weight:700;
 }
 .btn:hover{
   transform:translateY(-3px);
@@ -125,40 +79,29 @@ h1 span{color:#d4af37}
   background:rgba(255,255,255,.13);
 }
 .icon{
-  width:58px;height:58px;
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
-  background:rgba(212,175,55,.16);
-  color:#f3d36b;
+  width:58px;height:58px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:25px;background:rgba(212,175,55,.16);color:#f3d36b;
 }
-.btn small{
-  display:block;
-  color:#aaa;
-  margin-top:5px;
-  font-weight:400;
-}
+.btn small{display:block;color:#aaa;margin-top:5px;font-weight:400}
 .arrow{margin-left:auto;color:#999}
-.gold{
-  background:linear-gradient(135deg,rgba(212,175,55,.35),rgba(255,255,255,.08));
-}
+.gold{background:linear-gradient(135deg,rgba(212,175,55,.35),rgba(255,255,255,.08))}
 .brand{
-  margin-top:28px;
+  margin-top:18px;
   text-align:center;
-  color:#aaa;
-  font-size:13px;
+  color:#666;
+  font-size:11px;
+  letter-spacing:1px;
 }
 .brand a{
   display:inline-block;
-  margin-top:10px;
-  color:white;
-  font-size:24px;
-  font-weight:900;
+  margin-top:4px;
+  color:#888;
+  font-size:13px;
+  font-weight:600;
   text-decoration:none;
 }
-.brand i{color:#d4af37}
+.brand i{color:#d4af37;font-size:12px}
 button{font-family:inherit;cursor:pointer;text-align:left;width:100%}
 
 @media(max-width:820px){
@@ -232,7 +175,7 @@ button{font-family:inherit;cursor:pointer;text-align:left;width:100%}
   </button>
 
   <div class="brand">
-    Made by<br>
+    Made by
     <a href="https://instagram.com/vizitka_uz" target="_blank">
       <i class="fa-brands fa-instagram"></i> @vizitka_uz
     </a>
