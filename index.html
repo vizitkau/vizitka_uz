@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vizitka Uz | Premium Links</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vizitka Uz</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -18,293 +19,298 @@ font-family:'Inter',sans-serif;
 }
 
 body{
-background:#050505;
+background:#000;
 color:#fff;
 min-height:100vh;
 display:flex;
 justify-content:center;
+align-items:center;
 padding:20px;
+overflow-x:hidden;
 }
 
-.hero{
+.container{
 width:100%;
 max-width:430px;
-background:linear-gradient(180deg,#151515,#080808);
-border:1px solid rgba(255,255,255,.1);
-border-radius:28px;
-padding:28px 18px;
+position:relative;
+}
+
+.card{
 position:relative;
 overflow:hidden;
-box-shadow:0 20px 60px rgba(0,0,0,.4);
+background:linear-gradient(180deg,#121212,#000);
+border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
+padding:32px 22px;
+backdrop-filter:blur(10px);
+box-shadow:
+0 0 30px rgba(255,255,255,.02),
+0 30px 60px rgba(0,0,0,.7);
 }
 
-.ambient{
+.glow{
 position:absolute;
-width:180px;
-height:180px;
+width:250px;
+height:250px;
+background:#fff;
 border-radius:50%;
-filter:blur(50px);
-opacity:.3;
-animation:float 6s ease-in-out infinite;
+filter:blur(120px);
+opacity:.04;
+animation:float 8s ease-in-out infinite;
 }
 
-.ambient-one{
-background:#d4af37;
-top:-70px;
-left:-60px;
+.glow.one{
+top:-120px;
+left:-120px;
 }
 
-.ambient-two{
-background:#2563eb;
-right:-60px;
-top:140px;
-animation-delay:1s;
-}
-
-.ambient-three{
-background:#9333ea;
-bottom:-80px;
-left:80px;
+.glow.two{
+right:-120px;
+bottom:-120px;
 animation-delay:2s;
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(12px);}
+0%,100%{
+transform:translateY(0px);
 }
-
-.profile,
-.metrics,
-.links,
-.offer,
-.credit{
-position:relative;
-z-index:2;
+50%{
+transform:translateY(20px);
+}
 }
 
 .profile{
-text-align:center;
-}
-
-.avatar-wrap{
-width:100px;
-height:100px;
-margin:auto;
 position:relative;
-margin-bottom:15px;
+z-index:2;
+text-align:center;
 }
 
 .avatar{
-width:100%;
-height:100%;
+width:110px;
+height:110px;
+border-radius:28px;
 object-fit:cover;
-border-radius:22px;
 border:1px solid rgba(255,255,255,.15);
+padding:4px;
+background:#111;
 }
 
-.status-dot{
-width:16px;
-height:16px;
-background:#22c55e;
-border-radius:50%;
-position:absolute;
-right:3px;
-bottom:3px;
-border:3px solid #111;
-}
-
-.eyebrow{
+.badge{
+display:inline-block;
+margin-top:18px;
+padding:8px 14px;
+border-radius:50px;
+background:#111;
+border:1px solid rgba(255,255,255,.08);
 font-size:12px;
-font-weight:700;
-color:#d4af37;
+letter-spacing:2px;
 text-transform:uppercase;
-letter-spacing:1px;
 }
 
 h1{
-margin-top:6px;
-font-size:34px;
+font-size:36px;
+font-weight:800;
+margin-top:16px;
 }
 
-.subtitle{
-margin-top:10px;
-line-height:1.6;
-color:#cfcfcf;
+.desc{
+margin-top:12px;
 font-size:15px;
+line-height:1.8;
+color:#a8a8a8;
 }
 
-.metrics{
+.stats{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:10px;
-margin:24px 0;
+margin-top:28px;
 }
 
-.metrics div{
-background:rgba(255,255,255,.07);
-padding:12px;
-border-radius:16px;
-text-align:center;
-}
-
-.metrics strong{
-display:block;
-font-size:16px;
-}
-
-.metrics span{
-font-size:11px;
-color:#aaa;
-}
-
-.links{
-display:grid;
-gap:12px;
-}
-
-.link-card{
-display:flex;
-align-items:center;
-gap:12px;
-padding:15px;
+.stat{
+background:#0f0f0f;
+border:1px solid rgba(255,255,255,.06);
 border-radius:18px;
-text-decoration:none;
-color:#fff;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.08);
-transition:.2s;
-}
-
-.link-card:hover{
-transform:translateY(-3px);
-background:rgba(255,255,255,.12);
-}
-
-.primary{
-background:linear-gradient(135deg,#d4af37,#866412);
-}
-
-.icon{
-width:42px;
-height:42px;
-border-radius:14px;
-background:rgba(255,255,255,.15);
-display:flex;
-align-items:center;
-justify-content:center;
-flex-shrink:0;
-}
-
-.icon svg{
-width:22px;
-height:22px;
-fill:white;
-}
-
-.link-card span{
-flex:1;
-}
-
-.link-card strong{
-display:block;
-font-size:15px;
-}
-
-.link-card small{
-color:#ddd;
-}
-
-.offer{
-margin-top:20px;
-padding:18px;
-background:rgba(255,255,255,.08);
-border-radius:20px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-.offer h2{
-margin:6px 0;
-font-size:22px;
-}
-
-.offer p{
-color:#ccc;
-line-height:1.6;
-}
-
-.button{
-display:block;
-margin-top:12px;
-text-align:center;
 padding:14px;
-border-radius:16px;
-background:#d4af37;
-color:#111;
-font-weight:700;
-text-decoration:none;
+text-align:center;
 }
 
-.credit{
-margin-top:20px;
-text-align:center;
+.stat strong{
+display:block;
+font-size:18px;
+}
+
+.stat span{
 font-size:12px;
 color:#888;
 }
 
-.credit a{
-color:#d4af37;
+.links{
+margin-top:28px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.link{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:16px 18px;
+background:#0f0f0f;
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+text-decoration:none;
+color:#fff;
+transition:.25s;
+}
+
+.link:hover{
+transform:translateY(-3px);
+background:#171717;
+}
+
+.link-left{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.icon{
+width:46px;
+height:46px;
+border-radius:14px;
+background:#181818;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+}
+
+.link-title{
+font-size:15px;
+font-weight:600;
+}
+
+.link-sub{
+font-size:12px;
+color:#888;
+margin-top:2px;
+}
+
+.arrow{
+font-size:18px;
+opacity:.6;
+}
+
+.offer{
+margin-top:24px;
+background:#0d0d0d;
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+padding:22px;
+}
+
+.offer-small{
+font-size:12px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#999;
+}
+
+.offer h2{
+font-size:24px;
+margin-top:10px;
+}
+
+.offer p{
+margin-top:10px;
+color:#999;
+line-height:1.7;
+}
+
+.button{
+display:block;
+margin-top:18px;
+text-align:center;
+text-decoration:none;
+padding:15px;
+border-radius:16px;
+background:#fff;
+color:#000;
+font-weight:700;
+transition:.25s;
+}
+
+.button:hover{
+opacity:.9;
+}
+
+.footer{
+margin-top:22px;
+text-align:center;
+font-size:12px;
+color:#666;
+}
+
+.footer a{
+color:#fff;
 text-decoration:none;
 }
 
-@media(max-width:360px){
-.metrics{
+@media(max-width:380px){
+
+h1{
+font-size:30px;
+}
+
+.stats{
 grid-template-columns:1fr;
 }
-h1{
-font-size:28px;
+
 }
-}
+
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<div class="container">
 
-<div class="ambient ambient-one"></div>
-<div class="ambient ambient-two"></div>
-<div class="ambient ambient-three"></div>
+<div class="card">
+
+<div class="glow one"></div>
+<div class="glow two"></div>
 
 <div class="profile">
 
-<div class="avatar-wrap">
-<img class="avatar" src="logo.png" alt="Vizitka Uz">
-<span class="status-dot"></span>
-</div>
+<img src="logo.png" alt="Vizitka Uz" class="avatar">
 
-<p class="eyebrow">Premium Link Hub</p>
+<div class="badge">
+Premium Link Hub
+</div>
 
 <h1>Vizitka Uz</h1>
 
-<p class="subtitle">
-Premium vizitka, NFC karta, web sahifa va zamonaviy biznes yechimlari.
+<p class="desc">
+Premium NFC vizitkalar, zamonaviy web sahifalar va biznesingiz uchun raqamli yechimlar.
 </p>
 
 </div>
 
-<div class="metrics">
+<div class="stats">
 
-<div>
+<div class="stat">
 <strong>24/7</strong>
 <span>Online</span>
 </div>
 
-<div>
+<div class="stat">
 <strong>Premium</strong>
 <span>Design</span>
 </div>
 
-<div>
+<div class="stat">
 <strong>1 Click</strong>
 <span>Contact</span>
 </div>
@@ -313,53 +319,79 @@ Premium vizitka, NFC karta, web sahifa va zamonaviy biznes yechimlari.
 
 <div class="links">
 
-<a class="link-card primary" href="https://t.me/web_567" target="_blank">
+<a href="https://t.me/web_567" class="link" target="_blank">
+
+<div class="link-left">
 <div class="icon">✈</div>
-<span>
-<strong>Telegram orqali yozish</strong>
-<small>@web_567</small>
-</span>
+
+<div>
+<div class="link-title">Telegram</div>
+<div class="link-sub">@web_567</div>
+</div>
+</div>
+
+<div class="arrow">→</div>
+
 </a>
 
-<a class="link-card" href="https://instagram.com/vizitka_uz" target="_blank">
-<div class="icon">📷</div>
-<span>
-<strong>Instagram</strong>
-<small>@vizitka_uz</small>
-</span>
+<a href="https://instagram.com/vizitka_uz" class="link" target="_blank">
+
+<div class="link-left">
+<div class="icon">◎</div>
+
+<div>
+<div class="link-title">Instagram</div>
+<div class="link-sub">@vizitka_uz</div>
+</div>
+</div>
+
+<div class="arrow">→</div>
+
 </a>
 
-<a class="link-card" href="tel:+998935675510">
+<a href="tel:+998935675510" class="link">
+
+<div class="link-left">
 <div class="icon">☎</div>
-<span>
-<strong>Telefon qilish</strong>
-<small>+998 93 567 55 10</small>
-</span>
+
+<div>
+<div class="link-title">Telefon</div>
+<div class="link-sub">+998 93 567 55 10</div>
+</div>
+</div>
+
+<div class="arrow">→</div>
+
 </a>
 
 </div>
 
 <div class="offer">
 
-<p class="eyebrow">Maxsus Taklif</p>
+<div class="offer-small">
+Maxsus Taklif
+</div>
 
-<h2>NFC Vizitka va Link Sahifa</h2>
+<h2>NFC Vizitka</h2>
 
 <p>
-Biznesingiz uchun premium NFC karta va zamonaviy web sahifa tayyorlaymiz.
+Biznesingizni premium darajaga olib chiqing.
+Bitta tegish bilan barcha ma'lumotlaringiz mijozga yetib boradi.
 </p>
 
-<a class="button" href="https://t.me/web_567" target="_blank">
+<a href="https://t.me/web_567" target="_blank" class="button">
 Buyurtma berish
 </a>
 
 </div>
 
-<p class="credit">
-made by <a href="https://instagram.com/vizitka_uz" target="_blank">vizitka_uz</a>
-</p>
+<div class="footer">
+Made by <a href="https://instagram.com/vizitka_uz" target="_blank">vizitka_uz</a>
+</div>
 
-</section>
+</div>
+
+</div>
 
 </body>
 </html>
