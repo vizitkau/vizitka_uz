@@ -1,162 +1,183 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Azizov Akbar</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VIZITKA_UZ | Premium NFC Card</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #070707, #171717);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 430px;
-      background: rgba(20, 20, 20, 0.95);
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 28px;
-      padding: 32px 24px;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.7);
-      text-align: center;
-    }
-
-    .logo {
-      width: 92px;
-      height: 92px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #d4af37, #fff2a8);
-      color: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #f5d76e;
-    }
-
-    .subtitle {
-      margin: 8px 0 26px;
-      color: #bdbdbd;
-      font-size: 15px;
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      padding: 15px 17px;
-      margin: 12px 0;
-      border-radius: 16px;
-      background: #222;
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.25s;
-    }
-
-    .btn i {
-      width: 24px;
-      color: #f5d76e;
-      font-size: 20px;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #2b2b2b;
-      border-color: #d4af37;
-    }
-
-    .gold {
-      background: linear-gradient(135deg, #d4af37, #fff2a8);
-      color: #111;
-    }
-
-    .gold i {
-      color: #111;
-    }
-
-    button {
-      cursor: pointer;
-      border: none;
-      text-align: left;
-    }
-
-    .footer {
-      margin-top: 24px;
-      font-size: 13px;
-      color: #777;
-      letter-spacing: 0.5px;
-    }
-  </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  min-height:100vh;
+  font-family:Arial, sans-serif;
+  background:
+    radial-gradient(circle at top,#2d3444 0%,#08090d 45%,#000 100%);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  overflow-x:hidden;
+}
+.card{
+  width:100%;
+  max-width:430px;
+  min-height:720px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:34px;
+  padding:26px;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(22px);
+  box-shadow:0 0 80px rgba(255,255,255,.12);
+  position:relative;
+  overflow:hidden;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  width:280px;height:280px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  filter:blur(80px);
+  top:-90px;right:-90px;
+}
+.logo{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  margin:20px auto 18px;
+  display:block;
+  object-fit:cover;
+  box-shadow:0 0 35px rgba(255,255,255,.55);
+}
+h1{
+  text-align:center;
+  font-size:34px;
+  letter-spacing:4px;
+}
+.tag{
+  text-align:center;
+  margin-top:8px;
+  color:#cfd6e6;
+  font-size:14px;
+}
+.nfc{
+  margin:24px 0;
+  padding:18px;
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.15);
+  text-align:center;
+}
+.nfc span{
+  font-size:13px;
+  color:#aeb8cc;
+}
+.nfc b{
+  display:block;
+  margin-top:6px;
+  font-size:20px;
+}
+.links{
+  display:grid;
+  gap:14px;
+}
+.link{
+  text-decoration:none;
+  color:white;
+  padding:17px 18px;
+  border-radius:19px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.25s;
+}
+.link:hover{
+  transform:translateY(-3px) scale(1.01);
+  background:rgba(255,255,255,.16);
+  box-shadow:0 0 25px rgba(255,255,255,.14);
+}
+.left{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.left strong{font-size:16px}
+.left small{color:#b8c0d0}
+.arrow{
+  font-size:22px;
+  opacity:.8;
+}
+.footer{
+  margin-top:28px;
+  text-align:center;
+  font-size:12px;
+  color:#9ba4b7;
+}
+.glow{
+  position:absolute;
+  bottom:-70px;
+  left:-70px;
+  width:220px;
+  height:220px;
+  background:rgba(90,130,255,.22);
+  filter:blur(70px);
+  border-radius:50%;
+}
+</style>
 </head>
 
 <body>
+  <main class="card">
+    <div class="glow"></div>
 
-  <div class="card">
-    <div class="logo">AA</div>
+    <img src="logo.png" class="logo" alt="Vizitka_uz Logo">
 
-    <h1>Azizov Akbar</h1>
-    <div class="subtitle">Digital Business Card</div>
+    <h1>VIZITKA_UZ</h1>
+    <p class="tag">Premium NFC Digital Business Card</p>
 
-    <a class="btn gold" href="tel:+998906100636">
-      <i class="fa-solid fa-phone"></i>
-      Qo‘ng‘iroq qilish
-    </a>
+    <section class="nfc">
+      <span>Telefonni kartaga tekkizing</span>
+      <b>Kontaktlar bir zumda ochiladi</b>
+    </section>
 
-    <a class="btn" href="https://t.me/Akkbar611" target="_blank">
-      <i class="fa-brands fa-telegram"></i>
-      Telegram
-    </a>
+    <section class="links">
+      <a class="link" href="https://instagram.com/vizitka_uz" target="_blank">
+        <div class="left">
+          <strong>Instagram</strong>
+          <small>@vizitka_uz</small>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
 
-    <a class="btn" href="https://instagram.com/111_.cosmos" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-      Instagram
-    </a>
+      <a class="link" href="https://t.me/web_567" target="_blank">
+        <div class="left">
+          <strong>Telegram</strong>
+          <small>@web_567</small>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
 
-    <button class="btn" onclick="copyCard()">
-      <i class="fa-solid fa-credit-card"></i>
-      Karta raqamini nusxalash
-    </button>
+      <a class="link" href="https://pinterest.com/vizitka_uz" target="_blank">
+        <div class="left">
+          <strong>Pinterest</strong>
+          <small>@vizitka_uz</small>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
 
-    <a class="btn" href="azizov-akbar.vcf" download>
-      <i class="fa-solid fa-address-card"></i>
-      Kontaktni saqlash
-    </a>
+      <a class="link" href="tel:+998935675510">
+        <div class="left">
+          <strong>Telefon raqamim</strong>
+          <small>+998 93 567 55 10</small>
+        </div>
+        <div class="arrow">☎</div>
+      </a>
+    </section>
 
-    <div class="footer">NFC Premium Business Card</div>
-  </div>
-
-  <script>
-    function copyCard() {
-      navigator.clipboard.writeText("5440810309065703");
-      alert("Karta raqami nusxalandi");
-    }
-  </script>
-
+    <p class="footer">Made by VIZITKA_UZ · NFC Premium Card</p>
+  </main>
 </body>
 </html>
