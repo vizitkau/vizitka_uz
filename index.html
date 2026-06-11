@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VIZITKA_UZ Premium NFC</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Inter,sans-serif;
+font-family:'Inter',sans-serif;
 }
 
 body{
@@ -19,62 +21,58 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#05070d;
-overflow:hidden;
 padding:20px;
+overflow:hidden;
+background:
+radial-gradient(circle at top,#2f3748 0%,transparent 35%),
+radial-gradient(circle at bottom left,#16203d 0%,transparent 30%),
+#03050a;
 }
 
 body::before{
-content:"";
+content:'';
 position:fixed;
 width:800px;
 height:800px;
-background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%);
+background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);
 top:-300px;
-right:-250px;
-filter:blur(120px);
-}
-
-body::after{
-content:"";
-position:fixed;
-width:700px;
-height:700px;
-background:radial-gradient(circle,rgba(0,102,255,.15),transparent 70%);
-bottom:-250px;
-left:-250px;
-filter:blur(120px);
+right:-300px;
+filter:blur(100px);
 }
 
 .card{
 
 width:100%;
-max-width:430px;
+max-width:460px;
 
-background:rgba(255,255,255,.05);
+padding:35px 25px;
+
+border-radius:42px;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.09),
+rgba(255,255,255,.03)
+);
 
 backdrop-filter:blur(30px);
 
 border:1px solid rgba(255,255,255,.08);
 
-border-radius:40px;
-
-padding:35px 25px;
-
 box-shadow:
-0 0 50px rgba(255,255,255,.08),
-0 30px 80px rgba(0,0,0,.6);
+0 25px 80px rgba(0,0,0,.6),
+0 0 40px rgba(255,255,255,.05);
 
 position:relative;
-
 overflow:hidden;
 
 }
 
-.logo-wrap{
+.logo-box{
 
-width:160px;
-height:160px;
+width:180px;
+height:180px;
 
 margin:auto;
 
@@ -86,28 +84,83 @@ background:
 linear-gradient(
 135deg,
 #ffffff,
-#6b7280,
+#7f8897,
 #ffffff
 );
 
 box-shadow:
-0 0 60px rgba(255,255,255,.45),
-0 0 120px rgba(255,255,255,.15);
+0 0 50px rgba(255,255,255,.4),
+0 0 120px rgba(255,255,255,.12);
 
-animation:float 4s ease-in-out infinite;
+animation:float 5s ease-in-out infinite;
 
 }
 
-.logo{
+.custom-logo{
 
 width:100%;
 height:100%;
 
 border-radius:50%;
 
-object-fit:cover;
+background:
+radial-gradient(circle at 30% 20%,
+#3b4354,
+#0a0c12 60%);
 
-display:block;
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.custom-logo::before{
+
+content:'';
+
+position:absolute;
+
+width:200px;
+height:200px;
+
+background:
+radial-gradient(circle,
+rgba(255,255,255,.18),
+transparent 65%);
+
+filter:blur(20px);
+
+}
+
+.custom-logo span{
+
+position:relative;
+
+z-index:2;
+
+font-size:120px;
+
+font-weight:900;
+
+font-family:Georgia,serif;
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#a8b0bf,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 30px rgba(255,255,255,.6);
 
 }
 
@@ -138,9 +191,9 @@ letter-spacing:5px;
 background:
 linear-gradient(
 90deg,
-#fff,
-#c7d2fe,
-#fff
+#ffffff,
+#b7bfd1,
+#ffffff
 );
 
 -webkit-background-clip:text;
@@ -152,21 +205,21 @@ linear-gradient(
 
 text-align:center;
 
-color:#a7b0c3;
-
 margin-top:8px;
+
+color:#aeb7ca;
 
 font-size:15px;
 
 }
 
-.nfc{
+.hero{
 
 margin-top:25px;
 
-padding:20px;
+padding:22px;
 
-border-radius:28px;
+border-radius:26px;
 
 background:
 linear-gradient(
@@ -181,21 +234,19 @@ text-align:center;
 
 }
 
-.nfc small{
-
-color:#b8c2d3;
+.hero small{
 
 display:block;
 
 margin-bottom:8px;
 
+color:#b6bfd2;
+
 }
 
-.nfc h2{
+.hero h2{
 
-font-size:18px;
-
-color:white;
+font-size:22px;
 
 }
 
@@ -217,12 +268,12 @@ color:white;
 
 padding:18px 20px;
 
-border-radius:24px;
+border-radius:22px;
 
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.07),
+rgba(255,255,255,.08),
 rgba(255,255,255,.03)
 );
 
@@ -240,10 +291,10 @@ transition:.3s;
 
 .link:hover{
 
-transform:translateY(-3px);
+transform:translateY(-4px);
 
 box-shadow:
-0 15px 40px rgba(255,255,255,.08);
+0 15px 35px rgba(255,255,255,.08);
 
 }
 
@@ -257,29 +308,74 @@ font-size:18px;
 
 .left span{
 
-color:#aab3c7;
+display:block;
+
+margin-top:4px;
 
 font-size:14px;
 
+color:#b3bdd0;
+
 }
 
-.arrow{
+.icon{
 
-font-size:24px;
+font-size:22px;
 
-opacity:.8;
+}
+
+.phone{
+
+margin-top:20px;
+
+padding:20px;
+
+border-radius:24px;
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.12),
+rgba(255,255,255,.04)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.phone h3{
+
+margin-bottom:8px;
+
+font-size:18px;
+
+}
+
+.phone a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:20px;
+
+font-weight:700;
 
 }
 
 .footer{
 
-margin-top:30px;
+margin-top:25px;
 
 text-align:center;
 
 font-size:12px;
 
-color:#7d8798;
+letter-spacing:2px;
+
+color:#798396;
 
 }
 
@@ -290,8 +386,10 @@ color:#7d8798;
 
 <div class="card">
 
-<div class="logo-wrap">
-<img src="logo.png" class="logo">
+<div class="logo-box">
+<div class="custom-logo">
+<span>V</span>
+</div>
 </div>
 
 <h1>VIZITKA_UZ</h1>
@@ -300,49 +398,48 @@ color:#7d8798;
 Premium NFC Digital Business Card
 </p>
 
-<div class="nfc">
-<small>Telefonni kartaga tekkizing</small>
+<div class="hero">
+<small>Telefonni NFC kartaga tekkizing</small>
 <h2>Kontaktlar bir zumda ochiladi</h2>
 </div>
 
 <div class="links">
 
-<a class="link" href="https://instagram.com/vizitka_uz" target="_blank">
+<a href="https://instagram.com/vizitka_uz" target="_blank" class="link">
 <div class="left">
 <strong>Instagram</strong>
 <span>@vizitka_uz</span>
 </div>
-<div class="arrow">↗</div>
+<div class="icon">↗</div>
 </a>
 
-<a class="link" href="https://t.me/web_567" target="_blank">
+<a href="https://t.me/web_567" target="_blank" class="link">
 <div class="left">
 <strong>Telegram</strong>
 <span>@web_567</span>
 </div>
-<div class="arrow">↗</div>
+<div class="icon">↗</div>
 </a>
 
-<a class="link" href="https://pinterest.com/vizitka_uz" target="_blank">
+<a href="https://pinterest.com/vizitka_uz" target="_blank" class="link">
 <div class="left">
 <strong>Pinterest</strong>
 <span>@vizitka_uz</span>
 </div>
-<div class="arrow">↗</div>
+<div class="icon">↗</div>
 </a>
 
-<a class="link" href="tel:+998935675510">
-<div class="left">
-<strong>Telefon raqamim</strong>
-<span>+998 93 567 55 10</span>
 </div>
-<div class="arrow">☎</div>
-</a>
 
+<div class="phone">
+<h3>Telefon raqamim</h3>
+<a href="tel:+998935675510">
++998 93 567 55 10
+</a>
 </div>
 
 <div class="footer">
-Made by VIZITKA_UZ
+MADE BY VIZITKA_UZ
 </div>
 
 </div>
