@@ -1,111 +1,365 @@
 <!doctype html>
 <html lang="uz">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vizitka Uz | Premium Links</title>
-  <meta name="description" content="Vizitka Uz premium animatsion link sahifa">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vizitka Uz | Premium Links</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#050505;
+color:#fff;
+min-height:100vh;
+display:flex;
+justify-content:center;
+padding:20px;
+}
+
+.hero{
+width:100%;
+max-width:430px;
+background:linear-gradient(180deg,#151515,#080808);
+border:1px solid rgba(255,255,255,.1);
+border-radius:28px;
+padding:28px 18px;
+position:relative;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.ambient{
+position:absolute;
+width:180px;
+height:180px;
+border-radius:50%;
+filter:blur(50px);
+opacity:.3;
+animation:float 6s ease-in-out infinite;
+}
+
+.ambient-one{
+background:#d4af37;
+top:-70px;
+left:-60px;
+}
+
+.ambient-two{
+background:#2563eb;
+right:-60px;
+top:140px;
+animation-delay:1s;
+}
+
+.ambient-three{
+background:#9333ea;
+bottom:-80px;
+left:80px;
+animation-delay:2s;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(12px);}
+}
+
+.profile,
+.metrics,
+.links,
+.offer,
+.credit{
+position:relative;
+z-index:2;
+}
+
+.profile{
+text-align:center;
+}
+
+.avatar-wrap{
+width:100px;
+height:100px;
+margin:auto;
+position:relative;
+margin-bottom:15px;
+}
+
+.avatar{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:22px;
+border:1px solid rgba(255,255,255,.15);
+}
+
+.status-dot{
+width:16px;
+height:16px;
+background:#22c55e;
+border-radius:50%;
+position:absolute;
+right:3px;
+bottom:3px;
+border:3px solid #111;
+}
+
+.eyebrow{
+font-size:12px;
+font-weight:700;
+color:#d4af37;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+h1{
+margin-top:6px;
+font-size:34px;
+}
+
+.subtitle{
+margin-top:10px;
+line-height:1.6;
+color:#cfcfcf;
+font-size:15px;
+}
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin:24px 0;
+}
+
+.metrics div{
+background:rgba(255,255,255,.07);
+padding:12px;
+border-radius:16px;
+text-align:center;
+}
+
+.metrics strong{
+display:block;
+font-size:16px;
+}
+
+.metrics span{
+font-size:11px;
+color:#aaa;
+}
+
+.links{
+display:grid;
+gap:12px;
+}
+
+.link-card{
+display:flex;
+align-items:center;
+gap:12px;
+padding:15px;
+border-radius:18px;
+text-decoration:none;
+color:#fff;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.08);
+transition:.2s;
+}
+
+.link-card:hover{
+transform:translateY(-3px);
+background:rgba(255,255,255,.12);
+}
+
+.primary{
+background:linear-gradient(135deg,#d4af37,#866412);
+}
+
+.icon{
+width:42px;
+height:42px;
+border-radius:14px;
+background:rgba(255,255,255,.15);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+}
+
+.icon svg{
+width:22px;
+height:22px;
+fill:white;
+}
+
+.link-card span{
+flex:1;
+}
+
+.link-card strong{
+display:block;
+font-size:15px;
+}
+
+.link-card small{
+color:#ddd;
+}
+
+.offer{
+margin-top:20px;
+padding:18px;
+background:rgba(255,255,255,.08);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.offer h2{
+margin:6px 0;
+font-size:22px;
+}
+
+.offer p{
+color:#ccc;
+line-height:1.6;
+}
+
+.button{
+display:block;
+margin-top:12px;
+text-align:center;
+padding:14px;
+border-radius:16px;
+background:#d4af37;
+color:#111;
+font-weight:700;
+text-decoration:none;
+}
+
+.credit{
+margin-top:20px;
+text-align:center;
+font-size:12px;
+color:#888;
+}
+
+.credit a{
+color:#d4af37;
+text-decoration:none;
+}
+
+@media(max-width:360px){
+.metrics{
+grid-template-columns:1fr;
+}
+h1{
+font-size:28px;
+}
+}
+</style>
 </head>
+
 <body>
-  <main class="shell">
-    <section class="hero" aria-label="Premium links profile">
-      <div class="ambient ambient-one"></div>
-      <div class="ambient ambient-two"></div>
-      <div class="ambient ambient-three"></div>
 
-      <div class="profile">
-        <div class="avatar-wrap">
-          <img class="avatar" src="logo.png" alt="Vizitka Uz logo">
-          <span class="status-dot"></span>
-        </div>
-        <p class="eyebrow">Premium link hub</p>
-        <h1>Vizitka Uz</h1>
-        <p class="subtitle">
-          Premium vizitka, link sahifa va zamonaviy web xizmatlar uchun tezkor aloqa markazi.
-        </p>
-      </div>
+<section class="hero">
 
-      <div class="metrics" aria-label="Asosiy natijalar">
-        <div>
-          <strong>24/7</strong>
-          <span>online</span>
-        </div>
-        <div>
-          <strong>4K</strong>
-          <span>premium style</span>
-        </div>
-        <div>
-          <strong>1 click</strong>
-          <span>bog'lanish</span>
-        </div>
-      </div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+<div class="ambient ambient-three"></div>
 
-      <nav class="links" aria-label="Asosiy linklar">
-        <a class="link-card primary" href="https://t.me/web_567" target="_blank" rel="noreferrer">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-              <path d="M21.7 4.2 18.5 19c-.2 1-.8 1.2-1.6.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2l-11 6.9-4.7-1.5c-1-.3-1-1 .2-1.5L20.3 3c.8-.3 1.6.2 1.4 1.2Z"/>
-            </svg>
-          </span>
-          <span>
-            <strong>Telegram orqali yozish</strong>
-            <small>@web_567</small>
-          </span>
-          <b>&nearr;</b>
-        </a>
-        <a class="link-card" href="https://instagram.com/vizitka_uz" target="_blank" rel="noreferrer">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-              <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.7 2.1a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM12 7.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"/>
-            </svg>
-          </span>
-          <span>
-            <strong>Instagram profil</strong>
-            <small>@vizitka_uz</small>
-          </span>
-          <b>&nearr;</b>
-        </a>
-        <a class="link-card" href="https://pinterest.com/vizitka_uz" target="_blank" rel="noreferrer">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-              <path d="M12.1 2C6.5 2 3 5.7 3 10.2c0 2.1 1.2 4.8 3.1 5.6.3.1.5.1.6-.2l.5-2c.1-.3 0-.4-.2-.7-.6-.7-1-1.6-1-2.6 0-3.2 2.4-6.3 6.5-6.3 3.5 0 6 2.4 6 5.8 0 3.9-2 6.6-4.5 6.6-1.4 0-2.4-1.1-2.1-2.5l.6-2.4c.3-1.1.5-1.9.5-2.6 0-1-.5-1.8-1.6-1.8-1.3 0-2.3 1.4-2.3 3.2 0 1.2.4 2 .4 2l-1.6 6.6c-.3 1.2-.2 2.8-.1 3.8.1.4.6.5.8.2.5-.8 1.4-2.3 1.7-3.5l.7-2.7c.5.9 1.7 1.7 3 1.7 3.9 0 6.7-3.6 6.7-8.5C21.2 5.8 18 2 12.1 2Z"/>
-            </svg>
-          </span>
-          <span>
-            <strong>Pinterest sahifa</strong>
-            <small>@vizitka_uz</small>
-          </span>
-          <b>&nearr;</b>
-        </a>
-        <a class="link-card" href="tel:+998935675510">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" role="img">
-              <path d="M6.6 10.8c1.5 3 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.8 0 1.4.6 1.4 1.4v3.6c0 .8-.6 1.5-1.4 1.5C10.3 22 2 13.7 2 3.4 2 2.6 2.6 2 3.4 2H7c.8 0 1.4.6 1.4 1.4 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-2.1 2.2Z"/>
-            </svg>
-          </span>
-          <span>
-            <strong>Telefon orqali aloqa</strong>
-            <small>+998 93 567 55 10</small>
-          </span>
-          <b>&nearr;</b>
-        </a>
-      </nav>
+<div class="profile">
 
-      <section class="offer" aria-label="Premium xizmat">
-        <div>
-          <p class="eyebrow">Maxsus taklif</p>
-          <h2>Premium dizayn + animatsiya</h2>
-          <p>Shaxsiy brend, biznes yoki xizmatlar uchun zamonaviy link sahifa.</p>
-        </div>
-        <a class="button" href="https://t.me/web_567" target="_blank" rel="noreferrer">Buyurtma berish</a>
-      </section>
-      <p class="credit">made by <a href="https://instagram.com/vizitka_uz" target="_blank" rel="noreferrer">vizitka_uz</a></p>
-    </section>
-  </main>
-  <script src="script.js"></script>
+<div class="avatar-wrap">
+<img class="avatar" src="logo.png" alt="Vizitka Uz">
+<span class="status-dot"></span>
+</div>
+
+<p class="eyebrow">Premium Link Hub</p>
+
+<h1>Vizitka Uz</h1>
+
+<p class="subtitle">
+Premium vizitka, NFC karta, web sahifa va zamonaviy biznes yechimlari.
+</p>
+
+</div>
+
+<div class="metrics">
+
+<div>
+<strong>24/7</strong>
+<span>Online</span>
+</div>
+
+<div>
+<strong>Premium</strong>
+<span>Design</span>
+</div>
+
+<div>
+<strong>1 Click</strong>
+<span>Contact</span>
+</div>
+
+</div>
+
+<div class="links">
+
+<a class="link-card primary" href="https://t.me/web_567" target="_blank">
+<div class="icon">✈</div>
+<span>
+<strong>Telegram orqali yozish</strong>
+<small>@web_567</small>
+</span>
+</a>
+
+<a class="link-card" href="https://instagram.com/vizitka_uz" target="_blank">
+<div class="icon">📷</div>
+<span>
+<strong>Instagram</strong>
+<small>@vizitka_uz</small>
+</span>
+</a>
+
+<a class="link-card" href="tel:+998935675510">
+<div class="icon">☎</div>
+<span>
+<strong>Telefon qilish</strong>
+<small>+998 93 567 55 10</small>
+</span>
+</a>
+
+</div>
+
+<div class="offer">
+
+<p class="eyebrow">Maxsus Taklif</p>
+
+<h2>NFC Vizitka va Link Sahifa</h2>
+
+<p>
+Biznesingiz uchun premium NFC karta va zamonaviy web sahifa tayyorlaymiz.
+</p>
+
+<a class="button" href="https://t.me/web_567" target="_blank">
+Buyurtma berish
+</a>
+
+</div>
+
+<p class="credit">
+made by <a href="https://instagram.com/vizitka_uz" target="_blank">vizitka_uz</a>
+</p>
+
+</section>
+
 </body>
 </html>
