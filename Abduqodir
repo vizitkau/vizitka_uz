@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFA LINE PLUS | NFC Card</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box}
+
+    body{
+      min-height:100vh;
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%,rgba(255,0,0,.35),transparent 28%),
+        radial-gradient(circle at 80% 90%,rgba(212,175,55,.25),transparent 30%),
+        linear-gradient(145deg,#000,#090909,#1b0000);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      overflow-x:hidden;
+      padding:20px;
+    }
+
+    .nfc-card{
+      width:100%;
+      max-width:420px;
+      border-radius:34px;
+      padding:1px;
+      background:linear-gradient(135deg,#d4af37,#8b0000,#d4af37);
+      box-shadow:0 25px 80px rgba(0,0,0,.8);
+      animation:show .9s ease;
+    }
+
+    @keyframes show{
+      from{opacity:0;transform:translateY(35px) scale(.95)}
+      to{opacity:1;transform:translateY(0) scale(1)}
+    }
+
+    .inner{
+      border-radius:33px;
+      padding:28px 22px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02)),
+        #070707;
+      border:1px solid rgba(255,255,255,.08);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .inner::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      background:#e31b23;
+      border-radius:50%;
+      filter:blur(90px);
+      opacity:.35;
+      top:-80px;
+      right:-90px;
+      animation:glow 4s infinite alternate;
+    }
+
+    @keyframes glow{
+      from{opacity:.2;transform:scale(.9)}
+      to{opacity:.45;transform:scale(1.15)}
+    }
+
+    .logo-wrap{
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      margin:0 auto 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:radial-gradient(circle,#290000,#050505 70%);
+      border:1px solid #d4af37;
+      box-shadow:0 0 35px rgba(227,27,35,.65);
+      position:relative;
+      z-index:2;
+    }
+
+    .logo-wrap img{
+      width:115px;
+      animation:pulse 2.8s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.07)}
+    }
+
+    .dealer-badge{
+      display:inline-block;
+      padding:7px 16px;
+      border-radius:50px;
+      color:#d4af37;
+      background:rgba(212,175,55,.12);
+      border:1px solid rgba(212,175,55,.45);
+      font-size:12px;
+      letter-spacing:1.5px;
+      margin-bottom:14px;
+    }
+
+    h1{
+      font-size:26px;
+      font-weight:800;
+      margin-bottom:6px;
+      position:relative;
+      z-index:2;
+    }
+
+    .company{
+      color:#e31b23;
+      font-weight:900;
+      letter-spacing:2px;
+      font-size:19px;
+    }
+
+    .subtitle{
+      color:#aaa;
+      font-size:14px;
+      margin-top:8px;
+      margin-bottom:22px;
+    }
+
+    .lux-btn{
+      width:100%;
+      padding:15px 17px;
+      border-radius:18px;
+      margin-bottom:12px;
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      transition:.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .lux-btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg,transparent,#d4af37,transparent);
+      transform:translateX(-120%);
+      opacity:.25;
+    }
+
+    .lux-btn:hover::before{
+      animation:shine .8s;
+    }
+
+    @keyframes shine{
+      to{transform:translateX(120%)}
+    }
+
+    .lux-btn:hover{
+      transform:translateY(-3px);
+      border-color:#d4af37;
+      box-shadow:0 12px 25px rgba(212,175,55,.18);
+      color:#fff;
+    }
+
+    .lux-btn b{
+      font-size:15px;
+    }
+
+    .arrow{
+      color:#d4af37;
+      font-size:20px;
+    }
+
+    .call{
+      background:linear-gradient(135deg,#d4af37,#9b7200);
+      color:#050505;
+      font-weight:900;
+      border:none;
+    }
+
+    .call:hover{
+      color:#050505;
+    }
+
+    .call .arrow{
+      color:#050505;
+    }
+
+    .made{
+      margin-top:16px;
+      font-size:11px;
+      color:#777;
+    }
+
+    .made a{
+      color:#d4af37;
+      text-decoration:none;
+      font-weight:600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="nfc-card">
+    <section class="inner text-center">
+
+      <div class="logo-wrap">
+        <img src="logo.png" alt="AFA LINE PLUS">
+      </div>
+
+      <div class="dealer-badge">RASMIY DILLER</div>
+
+      <h1>Akramov Abduqodir</h1>
+      <div class="company">AFA LINE PLUS</div>
+      <div class="subtitle">Premium NFC Business Profile</div>
+
+      <div class="d-grid gap-1">
+        <a class="lux-btn call" href="tel:+998997975001">
+          <b>📞 +998 99 797 50 01</b>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="lux-btn" href="https://t.me/AAR655">
+          <b>👤 Telegram profil</b>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="lux-btn" href="https://t.me/afa_line_plus">
+          <b>📢 Telegram kanal</b>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="lux-btn" href="https://instagram.com/AFALINEPLUS">
+          <b>📸 Instagram</b>
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="lux-btn" href="https://youtube.com/@AFA_LINE_PLUS_">
+          <b>▶️ YouTube</b>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="made">
+        made by: <a href="https://instagram.com/vizitka_uz">vizitka_uz</a>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>
